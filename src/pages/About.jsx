@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import Logo from '../assets/logo.jpg';
-import apiService from '../utils/api';
+import { useState, useEffect } from "react";
+import Logo from "../assets/logo.jpg";
+import apiService from "../utils/api";
 
 const About = () => {
   const [settings, setSettings] = useState({
-    about_us: '',
-    company_name: ''
+    about_us: "",
+    company_name: "",
   });
   const [loading, setLoading] = useState(true);
 
@@ -15,10 +15,10 @@ const About = () => {
 
   const fetchSettings = async () => {
     try {
-      const response = await apiService.get('/settings');
-      setSettings(prev => ({ ...prev, ...response.data }));
+      const response = await apiService.get("/settings");
+      setSettings((prev) => ({ ...prev, ...response.data }));
     } catch (error) {
-      console.error('Error fetching settings:', error);
+      console.error("Error fetching settings:", error);
     } finally {
       setLoading(false);
     }
@@ -39,7 +39,7 @@ produk yang kami hasilkan, sambil terus berinovasi untuk memenuhi selera modern
 tanpa melupakan cita rasa autentik yang menjadi ciri khas DESSERTMELTIQ.`;
 
   const aboutContent = settings.about_us || defaultAboutContent;
-  const companyName = settings.company_name || 'DESSERTMELTIQ';
+  const companyName = settings.company_name || "DESSERTMELTIQ";
 
   if (loading) {
     return (
@@ -59,8 +59,10 @@ tanpa melupakan cita rasa autentik yang menjadi ciri khas DESSERTMELTIQ.`;
               Tentang {companyName}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-sans">
-              Sejak 2022, DESSERTMELTIQ telah menjadi bagian dari keluarga Indonesia dengan 
-              menghadirkan dessert berkualitas tinggi.
+              DESSERTMELTIQ merupakan usaha kuliner mahasiswa yang didirikan
+              pada tahun 2025 dalam rangka memenuhi tugas praktik kewirausahaan.
+              Usaha ini bergerak di bidang dessert cup dengan fokus pada
+              kualitas rasa, kebersihan produk, serta kepuasan konsumen.
             </p>
           </div>
         </div>
@@ -79,13 +81,12 @@ tanpa melupakan cita rasa autentik yang menjadi ciri khas DESSERTMELTIQ.`;
             </div>
             <div data-aos="fade-left">
               <h2 className="text-3xl font-bold italic text-primary-800 mb-6 font-display">
-                DESSERTMELTIQ: Dari Hobi Jadi Cinta yang Terasa di Setiap Gigitan
+                DESSERTMELTIQ: Dari Hobi Jadi Cinta yang Terasa di Setiap
+                Gigitan
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed font-sans">
-                {aboutContent.split('\n\n').map((paragraph, index) => (
-                  <p key={index}>
-                    {paragraph}
-                  </p>
+                {aboutContent.split("\n\n").map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             </div>
@@ -101,7 +102,8 @@ tanpa melupakan cita rasa autentik yang menjadi ciri khas DESSERTMELTIQ.`;
               Nilai-Nilai Kami
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah perjalanan kami
+              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah
+              perjalanan kami
             </p>
           </div>
 
@@ -110,32 +112,47 @@ tanpa melupakan cita rasa autentik yang menjadi ciri khas DESSERTMELTIQ.`;
               <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl text-white">💝</span>
               </div>
-              <h3 className="text-xl font-bold text-primary-800 mb-4 font-heading">Kualitas Terjamin</h3>
+              <h3 className="text-xl font-bold text-primary-800 mb-4 font-heading">
+                Kualitas Terjamin
+              </h3>
               <p className="text-gray-600 leading-relaxed font-sans">
-                Kami berkomitmen untuk selalu menggunakan bahan-bahan terbaik dan menerapkan 
-                standar kualitas tertinggi dalam setiap proses produksi.
+                Kami berkomitmen untuk selalu menggunakan bahan-bahan terbaik
+                dan menerapkan standar kualitas tertinggi dalam setiap proses
+                produksi.
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl text-white">🤝</span>
               </div>
-              <h3 className="text-xl font-bold text-primary-800 mb-4 font-heading">Kepercayaan</h3>
+              <h3 className="text-xl font-bold text-primary-800 mb-4 font-heading">
+                Kepercayaan
+              </h3>
               <p className="text-gray-600 leading-relaxed font-sans">
-                Membangun hubungan jangka panjang dengan pelanggan berdasarkan kepercayaan, 
-                kejujuran, dan pelayanan yang konsisten.
+                Membangun hubungan jangka panjang dengan pelanggan berdasarkan
+                kepercayaan, kejujuran, dan pelayanan yang konsisten.
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="400">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl text-white">🌱</span>
               </div>
-              <h3 className="text-xl font-bold text-primary-800 mb-4 font-heading">Inovasi Berkelanjutan</h3>
+              <h3 className="text-xl font-bold text-primary-800 mb-4 font-heading">
+                Inovasi Berkelanjutan
+              </h3>
               <p className="text-gray-600 leading-relaxed font-sans">
-                Terus berinovasi dan berkembang untuk menghadirkan produk-produk baru yang 
-                sesuai dengan kebutuhan dan selera zaman.
+                Terus berinovasi dan berkembang untuk menghadirkan produk-produk
+                baru yang sesuai dengan kebutuhan dan selera zaman.
               </p>
             </div>
           </div>
@@ -227,13 +244,15 @@ tanpa melupakan cita rasa autentik yang menjadi ciri khas DESSERTMELTIQ.`;
             </h2>
             <div className="max-w-4xl mx-auto bg-cream-50 rounded-2xl p-8">
               <p className="text-lg text-gray-700 leading-relaxed mb-6 font-serif italic">
-                &ldquo;Menghadirkan dessert berkualitas tinggi yang tidak hanya memenuhi kebutuhan nutrisi, 
-                tetapi juga memberikan kebahagiaan dalam setiap gigitan untuk keluarga Indonesia.&rdquo;
+                &ldquo;Menghadirkan dessert berkualitas tinggi yang tidak hanya
+                memenuhi kebutuhan nutrisi, tetapi juga memberikan kebahagiaan
+                dalam setiap gigitan untuk keluarga Indonesia.&rdquo;
               </p>
               <p className="text-gray-600 font-sans">
-                Kami percaya bahwa makanan yang baik adalah fondasi kehidupan yang baik. 
-                Oleh karena itu, kami berkomitmen untuk terus memberikan yang terbaik bagi 
-                setiap keluarga yang mempercayakan kebutuhan dessert mereka kepada kami.
+                Kami percaya bahwa makanan yang baik adalah fondasi kehidupan
+                yang baik. Oleh karena itu, kami berkomitmen untuk terus
+                memberikan yang terbaik bagi setiap keluarga yang mempercayakan
+                kebutuhan dessert mereka kepada kami.
               </p>
             </div>
           </div>
